@@ -1,0 +1,111 @@
+{
+  "movies": [
+    {
+      "id": 2,
+      "title": "Les secrets de Dumbledore",
+      "description": "les secrets de Dumbledore",
+      "releaseDate": "2022-05-27",
+      "genres": [
+        {
+          "id": 4,
+          "description": "Fantastique"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Les secrets de Dumbledore",
+      "description": "les secrets de Dumbledore",
+      "releaseDate": "2022-05-27"
+    },
+    {
+      "id": 4,
+      "title": "Les secrets de Dumbledore",
+      "description": "les secrets de Dumbledore",
+      "releaseDate": "2022-05-27"
+    },
+    {
+      "id": 5,
+      "title": "Les secrets de Dumbledore",
+      "description": "les secrets de Dumbledore",
+      "releaseDate": "2022-05-27"
+    },
+    {
+      "id": 6,
+      "title": "Top Gun",
+      "description": "top gun",
+      "releaseDate": "2022-05-27"
+    },
+    {
+      "title": "szz",
+      "description": "zzzz",
+      "releaseDate": "2022-06-11",
+      "genres": [],
+      "id": 7
+    },
+    {
+      "title": "ggg",
+      "description": "zzz",
+      "releaseDate": "2022-06-11",
+      "genres": [],
+      "id": 8
+    },
+    {
+      "title": "zzzz",
+      "description": "zzzz",
+      "releaseDate": "2022-06-12",
+      "genres": [
+        {
+          "id": "2",
+          "description": "Comedie"
+        }
+      ],
+      "id": 9
+    }
+  ],
+  "genre": [
+    {
+      "id": 1,
+      "description": "Action"
+    },
+    {
+      "id": 2,
+      "description": "Comedie"
+    },
+    {
+      "id": 3,
+      "description": "Drame"
+    },
+    {
+      "id": 4,
+      "description": "Fantastique"
+    },
+    {
+      "id": 5,
+      "description": "Horreur"
+    },
+    {
+      "id": 6,
+      "description": "Science-fiction"
+    },
+    {
+      "id": 7,
+      "description": "Thriller"
+    }
+  ],
+  "cinemas": [
+    {
+      "id": 1,
+      "name": "Cinéma de Liège",
+      "dateCreation": "2022-05-27",
+      "phoneNumber": "049876543"
+    },
+    {
+      "name": "Kinébis de Louvain",
+      "dateCreation": "2022-06-04",
+      "phoneNumber": "020202",
+      "active": "false",
+      "id": 2
+    }
+  ]
+}

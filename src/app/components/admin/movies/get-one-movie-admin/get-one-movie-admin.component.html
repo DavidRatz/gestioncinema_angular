@@ -1,0 +1,33 @@
+<ng-template #loading>
+    <div>
+        <p>loading...</p>
+    </div>
+</ng-template>
+<div *ngIf="movie; else loading">
+    <div class="row">
+    <div class="col-3"></div>
+    <div class="col-6">
+        <h1>{{movie.title}}</h1>
+        <img src="../../../assets/images/{{movie.title}}.jpg" alt="logo" class="logo">
+        <p>{{movie.description}}</p>
+        <p>{{movie.releaseDate}}</p>
+
+        <ul *ngFor="let genre of movie.genres">
+            <li>{{genre.description}}</li>
+        </ul>
+    </div>
+
+    </div>
+    
+
+</div>
+<div>
+    <div class="row">
+    <div class="col-1"></div>
+    <div class="col-6">
+        <h3>Modifier un film</h3>
+        <app-film-form (movie-sent)="onMovieUpdate($event)" [movie]="movie"></app-film-form>
+    </div>
+    </div>
+   
+</div>

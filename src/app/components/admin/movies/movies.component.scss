@@ -1,0 +1,40 @@
+$red-color: #FC7061;
+$brown-color :#B99E9B;
+$rose-color: #FCF4EF;
+$blue-color: #4C5464;
+.card{
+  
+    width: 400px;
+    border:none;
+    background-color: $brown-color;
+    text-align: center;
+    color: #fff;
+    height: 300px;
+  
+  }
+
+.title-option{
+    border-bottom: 2px solid $blue-color;
+    padding-bottom: 10px;
+
+}
+
+.flex{ 
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    
+}
+
+.btn-dark {
+    color: #fff;
+    background-color: $red-color;
+    border-color: $red-color;
+}
+
+
+.btn-dark:hover {
+    color: #fff;
+    background-color: $red-color;
+    border-color: $red-color;
+}

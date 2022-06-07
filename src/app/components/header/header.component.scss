@@ -1,0 +1,22 @@
+$header-color: #FC7061;
+$header-title: #ffffff;
+$btn-color: #FCF4EF;
+
+header{
+    background-color: $header-color;
+    padding: 10px;
+    color: $header-title;
+}
+nav{
+    background-color: $header-color;
+}
+
+.header-title{
+    color: $header-title;
+    margin: 0 auto;
+}
+.btn-default{
+    background-color: $btn-color;
+    color: $header-color;
+}
+

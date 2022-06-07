@@ -1,0 +1,26 @@
+
+    <div class="card">
+    <form [formGroup]="movieForm" (ngSubmit)="onSubmit()" class="form px-4 pt-3">
+        <div>
+            
+            <input type="text" placeholder="Titre" formControlName="title" class="form-control">
+        </div>
+
+        <div>
+            
+            <input type="text" placeholder="description" formControlName="description" class="form-control">
+        </div>
+        <div >
+            <input type="date" placeholder="releaseDate" formControlName="releaseDate" class="form-control">
+        </div>
+        <div *ngFor="let genre of listGenre">
+            <input type="checkbox" id="{{genre.id}}" name="genre" formArrayName="genres" value="{{genre.description}}" (change)="onCheckChange($event)" [checked]="ifChecked(genre.description)">
+            <label for="genre">{{genre.description}}</label>
+          </div>
+      
+
+        <button type="submit" class="btn btn-dark btn-block">Ajouter</button>
+    </form>
+    </div>
+
+

@@ -1,0 +1,37 @@
+<h3>Gestionnaire de cinemas</h3>
+<div class="flex">
+    <div class="">
+        <h3 >Ajouter un cinema</h3>
+        <app-form-cinema-admin (cinema-sent)="onCinemaSent($event) "></app-form-cinema-admin>
+    </div>
+    <div class=""></div>
+    <div class="table-responsive-sm">
+        <table class="table">
+        <h3>Cinema</h3>
+            <tr>
+                <th>Nom</th>
+                <th>Date de création</th>
+                <th>Numéro de téléphone</th>
+                <th>Actif</th>
+                <th>Modifier</th>
+                <th>Supprimer</th>
+            </tr>
+            <ng-container  *ngFor="let cinema of listCinema" >
+                <tr>
+                    <td>{{cinema.name }}</td>
+                    <td>{{cinema.dateCreation | date:'shortDate'}}</td>
+                    <td>{{cinema.phoneNumber}}</td>
+                    <td>{{cinema.active}}</td>
+                    
+                    <td><button class="btn-dark" (click)="onCinemaUpdate(cinema)">Modifier</button></td>
+                    <td><button class="btn-dark" (click)="onCinemaDelete(cinema)">Supprimer</button></td>
+                </tr>
+            </ng-container>
+        </table>
+        
+    </div>
+</div>
+
+
+
+

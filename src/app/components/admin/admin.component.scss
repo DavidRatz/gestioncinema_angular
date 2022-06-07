@@ -1,0 +1,14 @@
+$brown-color: #B99E9B;
+$red-color: #FC7061;
+
+nav{
+    background-color: $brown-color ;
+    
+}
+
+a{
+    color: #fff;
+}
+a:hover{
+    color: $red-color;
+}
