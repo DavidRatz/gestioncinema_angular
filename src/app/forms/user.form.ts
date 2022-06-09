@@ -7,7 +7,12 @@ export const USER_INSERT_FORM: FormContent = {
     firstname: ['',[V.required, V.minLength(2)]],
     email: ['', [V.required, V.email]],
     phoneNumber: ['', [V.required, V.minLength(2)]],
-    userName: ['', [V.required, V.minLength(2)]],
+    username: ['', [V.required, V.minLength(2)]],
     password: ['', [V.required, V.minLength(2)]],
     active: [true]
+}
+
+export const USER_CONNEXION_FORM : FormContent = {
+    'username': [ '', [V.required] ],
+    'password': [ '', [V.required] ]
 }

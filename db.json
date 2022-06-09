@@ -98,7 +98,8 @@
       "id": 1,
       "name": "Cinéma de Liège",
       "dateCreation": "2022-05-27",
-      "phoneNumber": "049876543"
+      "phoneNumber": "049876543",
+      "active": "false"
     },
     {
       "name": "Kinébis de Louvain",
@@ -106,6 +107,18 @@
       "phoneNumber": "020202",
       "active": "false",
       "id": 2
+    }
+  ],
+  "users": [
+    {
+      "lastname": "Geury",
+      "firstname": "Aymeric",
+      "email": "aymericgeury@hotmail.com",
+      "phoneNumber": "0474296999",
+      "username": "admin",
+      "password": "admin",
+      "active": true,
+      "id": 1
     }
   ]
 }

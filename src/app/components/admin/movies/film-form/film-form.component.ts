@@ -86,7 +86,7 @@ export class FilmFormComponent implements OnInit, OnChanges {
     
   }
   getGenres(){
-    this.service.getMovies().subscribe({
+    this.service.getGenres().subscribe({
       next :genre =>this.listGenre = genre,
       error : err => alert("echec"),
       complete: () => console.log("complete")

@@ -11,8 +11,10 @@
         <input id="searchbar"  type="text" name="search" placeholder="Rechercher un film">
         
 
-        <button type="button" class="btn btn-default" routerLink="/connexion">connexion</button>
+        <button *ngIf="!isConnected()" type="button" class="btn btn-default" routerLink="/connexion">connexion</button>
+        <button *ngIf="isConnected()" type="button" class="btn btn-default" routerLink="" (click)="disconnect()">déconnexion</button>
         
+        <p *ngIf="isConnected()">{{ getUsername() }} coucou</p>
       </nav>
     </div>
     <div class="col-3"></div> 

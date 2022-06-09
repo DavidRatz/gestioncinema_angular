@@ -11,11 +11,11 @@ export class GenreService {
 
   constructor(private client:HttpClient) { }
 
-  getMovies(){
+  getGenres(){
     return this.client.get<Genre[]>(this.BASE_URL);
   }
 
-  getMovie(id : number){
+  getGenre(id : number){
     return this.client.get<Genre>(this.BASE_URL + "/"+id)
   }
 }

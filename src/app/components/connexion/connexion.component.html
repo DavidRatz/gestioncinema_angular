@@ -14,38 +14,40 @@
           </ul>
           <div class="tab-content" id="pills-tabContent">
             <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+              <form [formGroup]="connexionForm" (ngSubmit)="onSubmit()">
+                <div class="form px-4 pt-5">
+
+                  <input type="text" name="" class="form-control" placeholder="Nom d'utilisateur" formControlName="username">
+
+                  <input type="text" name="" class="form-control" placeholder="Password" formControlName="password">
+                  <button class="btn btn-dark btn-block" type="submit">Login</button>
+                </div>
+              </form>
               
-              <div class="form px-4 pt-5">
-
-                <input type="text" name="" class="form-control" placeholder="Email or Phone">
-
-                <input type="text" name="" class="form-control" placeholder="Password">
-                <button class="btn btn-dark btn-block">Login</button>
-
-              </div>
-
-
-
             </div>
+
+
+
+            
             <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
               
+              <form [formGroup]="signUpForm" (ngSubmit)="onSignUp()">
+                <div class="form px-4">
+                  
+                  <input type="text" name="" class="form-control" placeholder="Nom" formControlName="lastname">
+                  <input type="text" name="" class="form-control" placeholder="Prénom" formControlName="firstname">
+                  <input type="text" name="" class="form-control" placeholder="Email" formControlName="email">
 
-              <div class="form px-4">
+                  <input type="text" name="" class="form-control" placeholder="Téléphone" formControlName="phoneNumber">
+                  <input type="text" name="" class="form-control" placeholder="Identifiant" formControlName="username" >
 
-                <input type="text" name="" class="form-control" placeholder="Nom">
-                <input type="text" name="" class="form-control" placeholder="Prénom">
-                <input type="text" name="" class="form-control" placeholder="Email">
+                  <input type="text" name="" class="form-control" placeholder="Password" formControlName="password">
 
-                <input type="text" name="" class="form-control" placeholder="Téléphone">
-                <input type="text" name="" class="form-control" placeholder="Identifiant">
+                  <button class="btn btn-dark btn-block" type="submit">Signup</button>
+                  
 
-                <input type="text" name="" class="form-control" placeholder="Password">
-
-                <button class="btn btn-dark btn-block">Signup</button>
-                
-
-              </div>
-
+                </div>
+              </form>
 
 
             </div>
