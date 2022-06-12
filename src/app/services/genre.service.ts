@@ -7,7 +7,7 @@ import { Genre } from '../models/genre.model';
 })
 export class GenreService {
 
-  private readonly BASE_URL = "http://localhost:3000/genre";
+  private readonly BASE_URL = "http://localhost:8080/genre";
 
   constructor(private client:HttpClient) { }
 

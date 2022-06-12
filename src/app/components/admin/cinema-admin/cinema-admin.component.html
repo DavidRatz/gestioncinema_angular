@@ -11,6 +11,7 @@
             <tr>
                 <th>Nom</th>
                 <th>Date de création</th>
+                <th>Adresse</th>
                 <th>Numéro de téléphone</th>
                 <th>Actif</th>
                 <th>Modifier</th>
@@ -20,6 +21,7 @@
                 <tr>
                     <td>{{cinema.name }}</td>
                     <td>{{cinema.dateCreation | date:'shortDate'}}</td>
+                    <td>Rue {{cinema.address!.street }} {{cinema.address!.number }}, {{cinema.address!.postCode }} {{cinema.address!.city }} {{cinema.address!.country }}</td>
                     <td>{{cinema.phoneNumber}}</td>
                     <td>{{cinema.active}}</td>
                     

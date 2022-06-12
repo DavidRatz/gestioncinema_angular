@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators as V } from '@angular/forms';
 import { CINEMA_INSERT_FORM } from 'src/app/forms/cinema.form';
+import { Address } from 'src/app/models/address.model';
 import { Cinema } from 'src/app/models/cinema.model';
 import { CinemasService } from 'src/app/services/cinemas.service';
 
@@ -21,7 +22,18 @@ export class FormCinemaAdminComponent implements OnInit {
   cinemaSent= new EventEmitter<Cinema>()
 
   constructor(builder: FormBuilder, private cinemaService : CinemasService ) {
-    this.cinemaForm = builder.group(CINEMA_INSERT_FORM)
+    this.cinemaForm = builder.group({
+      name: ['', [V.required, V.minLength(2)]],
+      dateCreation: [''],
+      phoneNumber: [""],
+      address: builder.group({
+        street: ['', [V.required, V.minLength(2)]],
+        number: ['', [V.required, V.minLength(2)]],
+        postCode: ['', [V.required, V.minLength(2)]],
+        city: ['', [V.required, V.minLength(2)]],
+        country: ['', [V.required, V.minLength(2)]]
+      })
+    })
     
   }
   ngOnChanges(): void {
@@ -30,7 +42,14 @@ export class FormCinemaAdminComponent implements OnInit {
         name : this.cinema?.name,
         dateCreation : this.cinema?.dateCreation,
         phoneNumber : this.cinema?.phoneNumber,
-        active : this.cinema?.active,
+        //active : this.cinema?.active,
+        address : {
+          street: this.cinema?.address!.street,
+          number: this.cinema?.address!.number,
+          postCode: this.cinema?.address!.postCode,
+          city: this.cinema?.address!.city,
+          country: this.cinema?.address!.country
+        }
         
     })
     }
@@ -44,9 +63,23 @@ export class FormCinemaAdminComponent implements OnInit {
   }
   
   onSubmit(){
-    if( this.cinemaForm.valid )
-    this.cinemaSent.emit(this.cinemaForm.value);
     console.log(this.cinemaForm.value);
+    let form: any
+    if( this.cinemaForm.valid ){
+      form = this.cinemaForm.value
+      // cinema.name = form["name"]
+      // cinema.dateCreation = form["dateCreation"]
+      // cinema.phoneNumber = form["phoneNumber"]
+      // address.street = form["street"]
+      // address.number = form["number"]
+      // address.postCode = form["postCode"]
+      // address.city = form["city"]
+      // address.country = form["country"]
+      // cinema.address = address
+      console.log(cinema);
+      
+      this.cinemaSent.emit(form);
+    }
   }
     
 }

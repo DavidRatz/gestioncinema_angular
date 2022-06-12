@@ -1,11 +1,26 @@
 
     <div class="card">
-        <form [formGroup]="cinemaForm" (ngSubmit)="onSubmit()" class="form px-4 pt-3">
+        <form [formGroup]="cinemaForm" (ngSubmit)="onSubmit()" class="form px-4 pt-6">
             <div>
-                
                 <input type="text" placeholder="Nom" formControlName="name" class="form-control">
             </div>
-    
+            <div formGroupName="address">
+                <div>
+                    <input type="text" placeholder="Rue" formControlName="street" class="form-control">
+                </div>
+                <div>
+                    <input type="text" placeholder="Numero" formControlName="number" class="form-control">
+                </div>
+                <div>
+                    <input type="number" placeholder="Code postal" formControlName="postCode" class="form-control">
+                </div>
+                <div>
+                    <input type="text" placeholder="Ville" formControlName="city" class="form-control">
+                </div>
+                <div>
+                    <input type="text" placeholder="Pays" formControlName="country" class="form-control">
+                </div>  
+            </div> 
             <div>
                 
                 <input type="text" placeholder="Numéro de téléphone" formControlName="phoneNumber" class="form-control">
@@ -14,16 +29,13 @@
                 <input type="date" placeholder="Date de création" formControlName="dateCreation" class="form-control">
             </div>
            
-            <label for="active">Cinéma actif:</label>
+            <!--<label for="active">Cinéma actif:</label>
 
-            <select name="activ" id="activ" formControlName="active">
+             <select name="activ" id="activ" formControlName="active">
                 <option value="true">Oui</option>
                 <option value="false">Non</option>
-            </select>
+            </select> -->
     
             <button type="submit" class="btn btn-dark btn-block">Ajouter</button>
         </form>
         </div>
-    
-    
-    
