@@ -17,6 +17,8 @@ export class FormCinemaAdminComponent implements OnInit {
    
   @Input("cinema")
   cinema!: Cinema;
+  @Input("modify")
+  modify!: boolean;
 
   @Output('cinema-sent')
   cinemaSent= new EventEmitter<Cinema>()
@@ -65,6 +67,7 @@ export class FormCinemaAdminComponent implements OnInit {
   onSubmit(){
     console.log(this.cinemaForm.value);
     let form: any
+    let data: any[] = []
     if( this.cinemaForm.valid ){
       form = this.cinemaForm.value
       // cinema.name = form["name"]
@@ -76,8 +79,6 @@ export class FormCinemaAdminComponent implements OnInit {
       // address.city = form["city"]
       // address.country = form["country"]
       // cinema.address = address
-      console.log(cinema);
-      
       this.cinemaSent.emit(form);
     }
   }

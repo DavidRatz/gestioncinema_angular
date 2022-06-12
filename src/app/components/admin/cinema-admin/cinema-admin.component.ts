@@ -31,9 +31,14 @@ export class CinemaAdminComponent implements OnInit {
   }
 
   onCinemaSent(movie: Cinema){
-    
-    this.cinemaService.onCineameSent(movie)
-      .subscribe(() => this.getCinemas())
+    // if(movie[0])
+    //   this.cinemaService.onCinemaUpdate(movie[1],movie[0])
+    //     .subscribe(() => this.getCinemas())
+    // else
+    //   this.cinemaService.onCinemaSent(movie[1])
+    //     .subscribe(() => this.getCinemas())
+    this.cinemaService.onCinemaSent(movie)
+         .subscribe(() => this.getCinemas())
   }
 
 

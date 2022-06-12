@@ -12,6 +12,7 @@ export class GetOneCinemaAdminComponent implements OnInit {
 
   id:number;
   cinema !: Cinema;
+  modify!: boolean
 
 
 
@@ -21,9 +22,9 @@ export class GetOneCinemaAdminComponent implements OnInit {
 
     if(this.id && this.id > 0)
       service.getCinema(this.id).subscribe({
-        next : (cinema)=>this.cinema = cinema,
+        next : (cinema)=>{this.cinema = cinema,this.modify=true},
         error: (err) => {
-          router.navigateByUrl("/admin/cinemas")}
+          router.navigateByUrl("/admin/cinema")}
       });
   }
 
@@ -35,7 +36,7 @@ export class GetOneCinemaAdminComponent implements OnInit {
     this.service.onCinemaUpdate(cinema, this.id)
       .subscribe()
       
-    this.router.navigateByUrl("admin/cinemas")
+    this.router.navigateByUrl("admin/cinema")
     
   }
 

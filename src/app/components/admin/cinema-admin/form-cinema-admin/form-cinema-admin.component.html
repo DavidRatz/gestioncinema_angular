@@ -35,7 +35,12 @@
                 <option value="true">Oui</option>
                 <option value="false">Non</option>
             </select> -->
-    
-            <button type="submit" class="btn btn-dark btn-block">Ajouter</button>
+            <div *ngIf="!modify">
+                <button type="submit" class="btn btn-dark btn-block">Ajouter</button>
+            </div>
+
+            <div *ngIf="modify">
+                <button type="submit" class="btn btn-dark btn-block">Modifier</button>
+            </div>
         </form>
         </div>

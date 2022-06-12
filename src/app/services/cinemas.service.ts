@@ -18,7 +18,7 @@ export class CinemasService {
     return this.client.get<Cinema>(this.BASE_URL+"/"+id);
   }
 
-  onCineameSent(cinema: Cinema){
+  onCinemaSent(cinema: Cinema){
     return this.client.post<Cinema>(this.BASE_URL, cinema)
   }
 
@@ -30,7 +30,7 @@ export class CinemasService {
 
   onCinemaUpdate(cinema : Cinema, id : number){
     
-    return this.client.patch<Cinema>(this.BASE_URL+"/"+id, cinema)
+    return this.client.put<Cinema>(this.BASE_URL+"/"+id, cinema)
 
   }
 
