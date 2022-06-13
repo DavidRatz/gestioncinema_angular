@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UsersService } from 'src/app/services/users.service';
 
 @Component({
   selector: 'app-admin',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdminComponent implements OnInit {
 
-  constructor() { }
+  constructor(private userService: UsersService) {
+    userService.$connected.subscribe(() => {this.isConnected});
+   }
 
   ngOnInit(): void {
+  }
+
+  isConnected(){
+  
+    return this.userService.connected;
   }
 
 }
