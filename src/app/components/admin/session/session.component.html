@@ -1,0 +1,32 @@
+<h3>Gestionnaire de programmation</h3>
+<div class="flex">
+    <div class="">
+        <h3 >Ajouter une session</h3>
+        <app-session-form (session-sent)="onSessionSent($event) "></app-session-form>
+    </div>
+    <div class=""></div>
+    <!-- <div class="table-responsive-sm">
+        <table class="table">
+        <h3>Films</h3>
+            <tr>
+                <th>Titre</th>
+                <th>Cinema</th>
+                <th>Date de sortie</th>
+                <th>Salle</th>
+                <th>Modifier</th>
+                <th>Supprimer</th>
+            </tr>
+            <ng-container  *ngFor="let session of listSession" >
+                <tr>
+                    <td>{{session.movie.title }}</td>
+                    <td>{{movie.description}}</td>
+                    <td>{{movie.releaseDate | date:'shortDate'}}</td>
+                    
+                    <td><button class="btn-dark" (click)="onMovieUpdate(movie)">Modifier</button></td>
+                    <td><button class="btn-dark" (click)="onMovieDelete(movie)">Supprimer</button></td>
+                </tr>
+            </ng-container>
+        </table>
+        
+    </div> -->
+</div>

@@ -6,6 +6,6 @@ export interface Cinema{
     dateCreation : Date;
     phoneNumber: string;
     active : boolean;
-    uuid : string;  
+    ref : string;  
     address: Address;
 }

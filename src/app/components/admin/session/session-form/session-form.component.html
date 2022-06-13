@@ -1,0 +1,27 @@
+
+
+    <div class="card">
+        <form [formGroup]="sessionForm" (ngSubmit)="onSubmit()" class="form px-4 pt-3">
+            <div>
+                <label for="movie-select">Choisir un film:</label>
+                <select name="movie" id="movie-select" formControlName="refMovie" *ngFor="let movie of listMovie " > 
+                    <option value="{{movie.ref}}" >{{movie.title}}</option>
+                </select>
+            </div>
+    
+            <div>
+                <label for="cinema-select">Choisir un Cinema:</label>
+                <select name="cinema" id="cinema-select" formControlName="refTheater" *ngFor="let cinema of listCinema ">
+                    <option value="{{cinema.ref}}">{{cinema.name}}</option>
+                </select>
+            </div>
+            <div >
+                <input type="datetime-local" placeholder="Date" formControlName="date" class="form-control">
+            </div>
+
+            <button type="submit" class="btn btn-dark btn-block">Ajouter</button>
+        </form>
+        </div>
+    
+    
+    

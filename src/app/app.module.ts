@@ -21,6 +21,8 @@ import { GetOneMovieAdminComponent } from './components/admin/movies/get-one-mov
 import { CinemaAdminComponent } from './components/admin/cinema-admin/cinema-admin.component';
 import { FormCinemaAdminComponent } from './components/admin/cinema-admin/form-cinema-admin/form-cinema-admin.component';
 import { GetOneCinemaAdminComponent } from './components/admin/cinema-admin/get-one-cinema-admin/get-one-cinema-admin.component';
+import { SessionComponent } from './components/admin/session/session.component';
+import { SessionFormComponent } from './components/admin/session/session-form/session-form.component';
 registerLocaleData(localeFr, 'fr');
 
 
@@ -40,6 +42,8 @@ registerLocaleData(localeFr, 'fr');
     CinemaAdminComponent,
     FormCinemaAdminComponent,
     GetOneCinemaAdminComponent,
+    SessionComponent,
+    SessionFormComponent,
     
   ],
   imports: [

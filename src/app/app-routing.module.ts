@@ -12,6 +12,7 @@ import { MoviesComponent } from './components/admin/movies/movies.component';
 import { GetOneMovieAdminComponent } from './components/admin/movies/get-one-movie-admin/get-one-movie-admin.component';
 import { CinemaAdminComponent } from './components/admin/cinema-admin/cinema-admin.component';
 import { GetOneCinemaAdminComponent } from './components/admin/cinema-admin/get-one-cinema-admin/get-one-cinema-admin.component';
+import { SessionComponent } from './components/admin/session/session.component';
 
 const routes: Routes = [
   { path:"", redirectTo:"accueil", pathMatch:"full"},
@@ -23,6 +24,7 @@ const routes: Routes = [
   {path: "admin/movies/:id", component:GetOneMovieAdminComponent},
   {path: "admin/cinema", component:CinemaAdminComponent},
   {path: "admin/cinema/:id", component:GetOneCinemaAdminComponent},
+  {path: "admin/session", component:SessionComponent},
   
   { path:"cinemas", component:CinemasComponent},
   { path:"connexion", component:ConnexionComponent},
