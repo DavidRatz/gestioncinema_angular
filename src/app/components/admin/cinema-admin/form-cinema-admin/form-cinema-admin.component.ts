@@ -66,20 +66,8 @@ export class FormCinemaAdminComponent implements OnInit {
   
   onSubmit(){
     console.log(this.cinemaForm.value);
-    let form: any
-    let data: any[] = []
     if( this.cinemaForm.valid ){
-      form = this.cinemaForm.value
-      // cinema.name = form["name"]
-      // cinema.dateCreation = form["dateCreation"]
-      // cinema.phoneNumber = form["phoneNumber"]
-      // address.street = form["street"]
-      // address.number = form["number"]
-      // address.postCode = form["postCode"]
-      // address.city = form["city"]
-      // address.country = form["country"]
-      // cinema.address = address
-      this.cinemaSent.emit(form);
+      this.cinemaSent.emit(this.cinemaForm.value);
     }
   }
     

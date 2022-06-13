@@ -6,5 +6,6 @@ export interface Movie{
     description : string;
     releaseDate : Date;
     genres : Genre[];
+    uuid: string;
 
 }
