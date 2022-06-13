@@ -7,5 +7,6 @@ export interface User{
     username : string;
     password: string;
     active : boolean;
+    roles : [string];
     token?: string
 }
