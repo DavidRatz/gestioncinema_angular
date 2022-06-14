@@ -13,6 +13,7 @@ import { GetOneMovieAdminComponent } from './components/admin/movies/get-one-mov
 import { CinemaAdminComponent } from './components/admin/cinema-admin/cinema-admin.component';
 import { GetOneCinemaAdminComponent } from './components/admin/cinema-admin/get-one-cinema-admin/get-one-cinema-admin.component';
 import { SessionComponent } from './components/admin/session/session.component';
+import { SessionFormUserComponent } from './components/user/session-user/session-form-user/session-form-user.component';
 
 const routes: Routes = [
   { path:"", redirectTo:"accueil", pathMatch:"full"},
@@ -20,6 +21,7 @@ const routes: Routes = [
   { path:"header",component:HeaderComponent},
   { path:"films", component:FilmsComponent},
   { path:"films/:id", component:GetOneMovieComponent},
+  { path:"session", component:SessionFormUserComponent},
   {path: "admin/movies", component:MoviesComponent},
   {path: "admin/movies/:id", component:GetOneMovieAdminComponent},
   {path: "admin/cinema", component:CinemaAdminComponent},

@@ -10,6 +10,7 @@ export class AdminComponent implements OnInit {
 
   constructor(private userService: UsersService) {
     userService.$connected.subscribe(() => {this.isConnected});
+    userService.$getRole.subscribe(() => {this.getRole});
    }
 
   ngOnInit(): void {
@@ -18,6 +19,17 @@ export class AdminComponent implements OnInit {
   isConnected(){
   
     return this.userService.connected;
+  }
+  getRole(){
+  
+    return this.userService.getRole;
+  }
+
+  isAdmin(){
+    if (this.userService.getRole == "admin"){
+      return true;
+    }
+    return false;
   }
 
 }

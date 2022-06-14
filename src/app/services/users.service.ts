@@ -24,6 +24,8 @@ export class UsersService {
 
   private connect = new Subject<null>();
   private username = new Subject<null>();
+  private role = new Subject<null>();
+  private token = new Subject<null>();
 
 
   user!: User;
@@ -76,8 +78,27 @@ get getUsername(){
 public get $getUsername(): Observable<null>{
     return this.username;
   }
-  
 
+  
+  
+  get getRole(){
+    let getUser=localStorage.getItem('connected');
+    if(getUser){
+      return (<Jwt | null> JSON.parse(getUser))?.role;
+    }
+    return null;
+  }
+  get getToken(): string | null {
+    let getUser=localStorage.getItem('connected');
+    if(getUser){
+      return (<Jwt | null> JSON.parse(getUser))!.jwt;
+    }
+    return null;
+
+  }
+  public get $getRole(): Observable<null>{
+    return this.role;
+  }
 
   register(user: User){
     return this.client.post<User>(this.BASE_URL, user)
@@ -85,6 +106,13 @@ public get $getUsername(): Observable<null>{
 
   getUsers(): Observable<User[]> {
     return this.client.get<User[]>(this.BASE_URL);
+  }
+
+  getAuthHeader(): { [key:string]:string } {
+    
+    const token = this.getToken;
+    return token ? { "Authorization": token } : {}
+  
   }
 }
 

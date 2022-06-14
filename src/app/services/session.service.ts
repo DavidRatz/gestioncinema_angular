@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Session } from '../models/session.model';
+import { UsersService } from './users.service';
 
 
 @Injectable({
@@ -11,7 +12,7 @@ export class SessionService {
   //private readonly BASE_URL = "http://localhost:8080/session";
   private readonly BASE_URL = "http://10.27.1.15:8080/session";
 
-  constructor(private client:HttpClient) { }
+  constructor(private client:HttpClient, private _sessionService: UsersService) { }
 
   getSessions(){
     return this.client.get<Session[]>(this.BASE_URL);
@@ -22,7 +23,9 @@ export class SessionService {
   }
 
   onSessionSent(session: Session){
-    return this.client.post<Session>(this.BASE_URL, session)
+    return this.client.post<Session>(this.BASE_URL, session, {
+      headers: this._sessionService.getAuthHeader()
+    });
   }
 
   onSessionDelete(session : Session){
@@ -35,5 +38,10 @@ export class SessionService {
     
     return this.client.put<Session>(this.BASE_URL+"/"+id, session)
 
+  }
+
+
+  onSessionSeach(session : Session){
+    return this.client.post<Session>(this.BASE_URL+"/search/",session);
   }
 }

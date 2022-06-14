@@ -4,14 +4,14 @@ import { Session } from 'src/app/models/session.model';
 import { SessionService } from 'src/app/services/session.service';
 
 @Component({
-  selector: 'app-session',
-  templateUrl: './session.component.html',
-  styleUrls: ['./session.component.scss']
+  selector: 'app-session-user',
+  templateUrl: './session-user.component.html',
+  styleUrls: ['./session-user.component.scss']
 })
-export class SessionComponent implements OnInit {
+export class SessionUserComponent implements OnInit {
 
   listSession !: Session[];
-
+  research !:any;
   constructor(private sessionService :SessionService, private router: Router) {
     this.getSession();
    }
@@ -32,19 +32,19 @@ export class SessionComponent implements OnInit {
     this.router.navigate(["admin/session/", session.id])
   }
 
-  onSessionSent(session: Session){
-    
-    this.sessionService.onSessionSent(session)
+  /* onSessionSearch(session: any){
+    console.log(session)
+    console.log("coucou ze z")
+    this.research = this.sessionService.onSessionSeach(session)
+      .subscribe(() => this.getSession())
+  
+  } */
+
+  onResearchSent(session: Session){
+    console.log(session)
+    console.log("coucou ze z")
+    this.research = this.sessionService.onSessionSeach(session)
       .subscribe(() => this.getSession())
   }
 
-
-  onSessionUpdate(session : Session){
-    this.router.navigate(["admin/session/", session.id])
-  }
-
-  onSessionDelete(session : Session){
-    this.sessionService.onSessionDelete(session)
-      .subscribe(() => this.getSession())
-  }
 }

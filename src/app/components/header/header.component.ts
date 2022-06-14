@@ -12,10 +12,10 @@ export class HeaderComponent implements OnInit {
 
   
   
-  
   constructor(private userService: UsersService) {
     userService.$connected.subscribe(() => {this.isConnected});
     userService.$getUsername.subscribe(() => {this.getUsername});
+    
     
    
     
@@ -27,6 +27,7 @@ export class HeaderComponent implements OnInit {
   
     return this.userService.connected;
   }
+  
 
   getUsername(){
     return this.userService.getUsername;

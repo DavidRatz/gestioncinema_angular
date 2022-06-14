@@ -1,0 +1,27 @@
+
+<div class="flex">
+    <div class="">
+        <h3 >Rechercher une programmation</h3>
+        <app-session-form-user (research-sent)="onResearchSent($event)"></app-session-form-user>
+    </div>
+    <div class=""></div>
+     <div class="table-responsive-sm">
+        <table class="table">
+        <h3>Films</h3>
+            <tr>
+                <th>ref</th>
+                <th>ref move</th>
+
+            </tr>
+            <ng-container  *ngFor="let session of listSession" >
+                <tr>
+                    <td>{{research.ref}}</td>
+                    <td>{{research.refMovie}}</td>
+
+                    
+                </tr>
+            </ng-container>
+        </table>
+        
+    </div>
+</div>

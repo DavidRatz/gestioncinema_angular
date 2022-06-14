@@ -20,6 +20,10 @@ export class RoomService {
     return this.client.get<Room>(this.BASE_URL+"/"+id);
   }
 
+  getRoomByTheater(idTheater : number){
+    return this.client.get<Room[]>(this.BASE_URL+"/theater/"+idTheater);
+  }
+
   onRoomSent(room: Room){
     return this.client.post<Room>(this.BASE_URL, room)
   }

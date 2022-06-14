@@ -1,3 +1,4 @@
+
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { SESSION_INSERT_FORM } from 'src/app/forms/session.form';
@@ -10,11 +11,11 @@ import { MoviesService } from 'src/app/services/movies.service';
 import { RoomService } from 'src/app/services/room.service';
 
 @Component({
-  selector: 'app-session-form',
-  templateUrl: './session-form.component.html',
-  styleUrls: ['./session-form.component.scss']
+  selector: 'app-session-form-user',
+  templateUrl: './session-form-user.component.html',
+  styleUrls: ['./session-form-user.component.scss']
 })
-export class SessionFormComponent implements OnInit {
+export class SessionFormUserComponent implements OnInit {
 
   sessionForm:FormGroup;
   listCinema !: Cinema[]
@@ -22,26 +23,26 @@ export class SessionFormComponent implements OnInit {
   listRoom !: Room[]
   listRoomByTheater !: Room[]
 
-  @Output('session-sent')
-  sessionSent= new EventEmitter<Session>()
+  @Output('research-sent')
+  researchSent= new EventEmitter<Session>()
 
   constructor(builder: FormBuilder, private theaterService: CinemasService, private movieService: MoviesService, private roomService : RoomService) { 
     this.getCinemas();
     this.getMovies();
     this.getRooms();
-    
     this.sessionForm = builder.group(SESSION_INSERT_FORM)
-
-  
   }
 
   ngOnInit(): void {
   }
 
   onSubmit(){
-    if( this.sessionForm.valid )
-    this.sessionSent.emit(this.sessionForm.value);
+    console.log("coucou")
+    if( this.sessionForm.valid ){
+
     console.log(this.sessionForm.value);
+    this.researchSent.emit(this.sessionForm.value);
+    }
     
   }
   getRooms(){
@@ -59,34 +60,27 @@ export class SessionFormComponent implements OnInit {
     })
   }
 
-  
-  
   onChange(refTheater?: any){
-  console.log(refTheater.value);
-    if(refTheater){
-      
-      this.getRoomsByTheater(refTheater.value);
+    console.log(refTheater.value);
+      if(refTheater){
+        
+        this.getRoomsByTheater(refTheater.value);
+      }
     }
-  }
-
-  getCinemas(){
-    this.theaterService.getCinemas().subscribe({
-      next :cinema =>this.listCinema = cinema,
-      error : err => alert("echec"),
-      complete: () => console.log("complete")
-    })
-  }
-
-  getMovies(){
-    this.movieService.getMovies().subscribe({
-      next :movie =>{this.listMovie = movie,console.log(movie)},
-      error : err => alert("echec"),
-      complete: () => console.log("complete")
-    })
-  }
-
   
-
-
-
+    getCinemas(){
+      this.theaterService.getCinemas().subscribe({
+        next :cinema =>this.listCinema = cinema,
+        error : err => alert("echec"),
+        complete: () => console.log("complete")
+      })
+    }
+  
+    getMovies(){
+      this.movieService.getMovies().subscribe({
+        next :movie =>{this.listMovie = movie,console.log(movie)},
+        error : err => alert("echec"),
+        complete: () => console.log("complete")
+      })
+    }
 }
