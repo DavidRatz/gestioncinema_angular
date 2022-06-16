@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { UserReservation } from 'src/app/models/user-eservation.model';
 import { User } from 'src/app/models/user.model';
 import { UsersService } from 'src/app/services/users.service';
 
@@ -12,6 +13,7 @@ export class GetOneUserComponent implements OnInit {
 
   username:string;
   user !: User;
+  userReservation !: UserReservation;
 
 
 
@@ -20,12 +22,19 @@ export class GetOneUserComponent implements OnInit {
     this.username = param_id? param_id : "";
   
 
-    if(param_id )
+    if(param_id ){
       userService.getUser(this.username).subscribe({
         next : (user)=>{this.user = user, console.log(user)},
         error: (err) => {
           router.navigateByUrl("")}
       });
+
+      userService.getReservationByUser(this.username).subscribe({
+        next : (userReservation)=>{this.userReservation = userReservation, console.log(userReservation)},
+        error: (err) => {
+          router.navigateByUrl("")}
+      });
+    }
   }
 
   ngOnInit(): void {

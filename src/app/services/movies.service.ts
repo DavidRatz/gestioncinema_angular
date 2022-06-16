@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Movie } from '../models/movie.model';
+import { UsersService } from './users.service';
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +11,7 @@ export class MoviesService {
   //private readonly BASE_URL = "http://localhost:8080/movie";
   private readonly BASE_URL = "http://10.27.1.4:8080/movie";
 
-  constructor(private client:HttpClient) { }
+  constructor(private client:HttpClient, private _userservice: UsersService) { }
 
   getMovies(){
     return this.client.get<Movie[]>(this.BASE_URL);
@@ -21,7 +22,9 @@ export class MoviesService {
   }
 
   onMovieSent(movie: Movie){
-    return this.client.post<Movie>(this.BASE_URL, movie)
+    return this.client.post<Movie>(this.BASE_URL, movie, {
+      headers: this._userservice.getAuthHeader()
+    })
   }
 
   onMovieDelete(movie : Movie){

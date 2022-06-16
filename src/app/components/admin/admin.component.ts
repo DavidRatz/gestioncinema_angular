@@ -26,7 +26,7 @@ export class AdminComponent implements OnInit {
   }
 
   isAdmin(){
-    if (this.userService.getRole == "admin"){
+    if (this.userService.getRole == "ADMIN"){
       return true;
     }
     return false;

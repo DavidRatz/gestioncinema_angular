@@ -23,7 +23,7 @@ export class GetOneMovieComponent implements OnInit {
       service.getMovie(this.id).subscribe({
         next : (movie)=>this.movie = movie,
         error: (err) => {
-          router.navigateByUrl("/films")}
+          router.navigateByUrl("/movies")}
       });
   }
 

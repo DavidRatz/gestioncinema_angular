@@ -5,7 +5,7 @@
    
     <nav class="navbar sticky-top navbar-expand-sm col-6 ">
         
-      <button type="button" class="btn btn-default" routerLink="/session">Réserver</button>
+      <button *ngIf="isConnected()" type="button" class="btn btn-default" routerLink="/session">Réserver</button>
         <a class="navbar-brand header-title" href="#">KinéBis</a>
         
         <i class="fa fa-search"></i>

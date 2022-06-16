@@ -10,10 +10,16 @@
 <p>Prénom : {{user.firstname}} </p>
 
 <ul *ngFor="let cart of user.carts" >
-    <li><h4> ref: {{cart.ref}}</h4>
+    <li>
+        <div *ngIf="userReservation; else loading" >
+            <h4>{{userReservation.sessionDTO.movieDTO.title}}</h4>
+            <img src="../../../assets/images/{{userReservation.sessionDTO.movieDTO.title}}.jpg" alt="logo" class="logo">
+        
     <p>quantité : {{cart.quantity}}</p>
     <p>prix unitaire :{{cart.price}}</p>
     <p>prix totoal :{{cart.price*cart.quantity}}</p>
+    <p>Date réservation : {{userReservation.ticketDTO.dateShipping | date:"long"}}</p>
+</div>
 </li>
 
 </ul>

@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 
 import { BehaviorSubject, map, Observable, Subject } from 'rxjs';
 import { Jwt } from '../models/jwt.models';
+import { UserReservation } from '../models/user-eservation.model';
 import { User } from '../models/user.model';
 import { UserConnection } from '../models/userConnection.model';
 
@@ -118,6 +119,11 @@ public get $getUsername(): Observable<null>{
   getUser(username : string){
     console.log(username)
     return this.client.get<User>(this.BASE_URL + "/name/"+username)
+  }
+
+  getReservationByUser(username : string){
+    console.log(username)
+    return this.client.get<UserReservation>(this.BASE_URL + "/reservation/"+username)
   }
 }
 
