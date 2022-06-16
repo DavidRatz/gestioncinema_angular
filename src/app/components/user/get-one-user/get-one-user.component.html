@@ -12,7 +12,8 @@
 <ul *ngFor="let cart of user.carts" >
     <li><h4> ref: {{cart.ref}}</h4>
     <p>quantité : {{cart.quantity}}</p>
-    <p>prix :{{cart.price}}</p>
+    <p>prix unitaire :{{cart.price}}</p>
+    <p>prix totoal :{{cart.price*cart.quantity}}</p>
 </li>
 
 </ul>
