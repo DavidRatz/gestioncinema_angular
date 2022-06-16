@@ -2,26 +2,32 @@
 <div class="flex">
     <div class="">
         <h3 >Rechercher une programmation</h3>
-        <app-session-form-user (research-sent)="onResearchSent($event)"></app-session-form-user>
+        <app-session-form-user (research-sent)="onResearchSent($event) "></app-session-form-user>
+        
+
     </div>
     <div class=""></div>
-     <div class="table-responsive-sm">
-        <table class="table">
-        <h3>Films</h3>
-            <tr>
-                <th>ref</th>
-                <th>ref move</th>
 
-            </tr>
-            <ng-container  *ngFor="let session of listSession" >
-                <tr>
-                    <td>{{research.ref}}</td>
-                    <td>{{research.refMovie}}</td>
+    <div class="card" *ngIf="research">
+        <form [formGroup]="reservationForm" (ngSubmit)="onSubmit()" class="form px-4 pt-3">
+            <div>
+                <input type="hidden" [(ngModel)]="research.ref
+                " formControlName="refSession" >
+            </div>
+    
+            <div>
+                <input type="number" formControlName="quantity" placeholder="Nombre de places">
+            </div>
 
-                    
-                </tr>
-            </ng-container>
-        </table>
-        
+            <div>
+                <input type="hidden" [(ngModel)]="username
+                "
+                formControlName="username" >
+            </div>
+            
+            <button type="submit" class="btn btn-dark btn-block">Réserver</button>
+        </form>
     </div>
+    
+     
 </div>

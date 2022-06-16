@@ -13,7 +13,8 @@ import { GetOneMovieAdminComponent } from './components/admin/movies/get-one-mov
 import { CinemaAdminComponent } from './components/admin/cinema-admin/cinema-admin.component';
 import { GetOneCinemaAdminComponent } from './components/admin/cinema-admin/get-one-cinema-admin/get-one-cinema-admin.component';
 import { SessionComponent } from './components/admin/session/session.component';
-import { SessionFormUserComponent } from './components/user/session-user/session-form-user/session-form-user.component';
+import { SessionUserComponent } from './components/user/session-user/session-user.component';
+import { GetOneUserComponent } from './components/user/get-one-user/get-one-user.component';
 
 const routes: Routes = [
   { path:"", redirectTo:"accueil", pathMatch:"full"},
@@ -21,13 +22,13 @@ const routes: Routes = [
   { path:"header",component:HeaderComponent},
   { path:"films", component:FilmsComponent},
   { path:"films/:id", component:GetOneMovieComponent},
-  { path:"session", component:SessionFormUserComponent},
+  { path:"session", component:SessionUserComponent},
   {path: "admin/movies", component:MoviesComponent},
   {path: "admin/movies/:id", component:GetOneMovieAdminComponent},
   {path: "admin/cinema", component:CinemaAdminComponent},
   {path: "admin/cinema/:id", component:GetOneCinemaAdminComponent},
   {path: "admin/session", component:SessionComponent},
-  
+  {path: "user/name/:username", component:GetOneUserComponent},
   { path:"cinemas", component:CinemasComponent},
   { path:"connexion", component:ConnexionComponent},
 

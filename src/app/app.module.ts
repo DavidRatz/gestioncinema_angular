@@ -25,6 +25,7 @@ import { SessionComponent } from './components/admin/session/session.component';
 import { SessionFormComponent } from './components/admin/session/session-form/session-form.component';
 import { SessionUserComponent } from './components/user/session-user/session-user.component';
 import { SessionFormUserComponent } from './components/user/session-user/session-form-user/session-form-user.component';
+import { GetOneUserComponent } from './components/user/get-one-user/get-one-user.component';
 registerLocaleData(localeFr, 'fr');
 
 
@@ -48,6 +49,7 @@ registerLocaleData(localeFr, 'fr');
     SessionFormComponent,
     SessionUserComponent,
     SessionFormUserComponent,
+    GetOneUserComponent
     
   ],
   imports: [

@@ -13,8 +13,8 @@ export class UsersService {
   //private readonly BASE_URL = "http://localhost:3000/users";
   //private readonly BASE_URL = "http://localhost:8080/user";
   //private readonly TEST_URL = "http:/localhost:8080";
-  private readonly BASE_URL = "http://10.27.1.15:8080/user";
-  private readonly TEST_URL = "http://10.27.1.15:8080";
+  private readonly BASE_URL = "http://10.27.1.4:8080/user";
+  private readonly TEST_URL = "http://10.27.1.4:8080";
 
   public refreshSubject: BehaviorSubject<any> = new BehaviorSubject<any>('');
   public userObs: BehaviorSubject<User | undefined> = new BehaviorSubject<User | undefined>(undefined);
@@ -113,6 +113,11 @@ public get $getUsername(): Observable<null>{
     const token = this.getToken;
     return token ? { "Authorization": token } : {}
   
+  }
+
+  getUser(username : string){
+    console.log(username)
+    return this.client.get<User>(this.BASE_URL + "/name/"+username)
   }
 }
 

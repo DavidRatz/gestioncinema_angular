@@ -30,16 +30,15 @@ export class SessionFormUserComponent implements OnInit {
     this.getCinemas();
     this.getMovies();
     this.getRooms();
-    this.sessionForm = builder.group(SESSION_INSERT_FORM)
+    this.sessionForm = builder.group(SESSION_INSERT_FORM);
+    
   }
 
   ngOnInit(): void {
   }
 
   onSubmit(){
-    console.log("coucou")
     if( this.sessionForm.valid ){
-
     console.log(this.sessionForm.value);
     this.researchSent.emit(this.sessionForm.value);
     }

@@ -1,7 +1,9 @@
+import { Cart } from "./cart.models";
+
 export interface User{
     id ?:  number;
-    lastName : string;
-    firstName : string;
+    lastname : string;
+    firstname : string;
     email : string;
     phoneNumber : string;
     username : string;
@@ -9,4 +11,5 @@ export interface User{
     active : boolean;
     roles : [string];
     token?: string
+    carts : Cart[]
 }

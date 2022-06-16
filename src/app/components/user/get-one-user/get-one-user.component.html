@@ -1,0 +1,19 @@
+
+<ng-template #loading>
+    <div>
+        <p>loading...</p>
+    </div>
+</ng-template>
+<div *ngIf="user; else loading" >
+<h3>Voici vos infos: {{user.username}}</h3>
+<p>Nom : {{user.lastname}} </p>
+<p>Prénom : {{user.firstname}} </p>
+
+<ul *ngFor="let cart of user.carts" >
+    <li><h4> ref: {{cart.ref}}</h4>
+    <p>quantité : {{cart.quantity}}</p>
+    <p>prix :{{cart.price}}</p>
+</li>
+
+</ul>
+</div>
