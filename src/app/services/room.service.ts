@@ -7,8 +7,8 @@ import { Room } from '../models/room.model';
 })
 export class RoomService {
 
-  //private readonly BASE_URL = "http://localhost:8080/room";
-  private readonly BASE_URL = "http://10.27.1.4:8080/room";
+  private readonly BASE_URL = "http://localhost:8080/room";
+  //private readonly BASE_URL = "http://10.27.1.15:8080/room";
 
   constructor(private client:HttpClient) { }
 

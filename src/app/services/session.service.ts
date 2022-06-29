@@ -10,8 +10,8 @@ import { UsersService } from './users.service';
 })
 export class SessionService {
 
-  //private readonly BASE_URL = "http://localhost:8080/session";
-  private readonly BASE_URL = "http://10.27.1.4:8080/session";
+  private readonly BASE_URL = "http://localhost:8080/session";
+  //private readonly BASE_URL = "http://10.27.1.15:8080/session";
 
   constructor(private client:HttpClient, private _sessionService: UsersService) { }
 

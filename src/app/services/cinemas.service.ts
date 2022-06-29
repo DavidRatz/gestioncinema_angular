@@ -6,8 +6,8 @@ import { Cinema } from '../models/cinema.model';
   providedIn: 'root'
 })
 export class CinemasService {
-  //private readonly BASE_URL = "http://localhost:8080/theater";
-  private readonly BASE_URL = "http://10.27.1.4:8080/theater";
+  private readonly BASE_URL = "http://localhost:8080/theater";
+  //private readonly BASE_URL = "http://10.27.1.15:8080/theater";
 
   constructor(private client:HttpClient) { }
 
